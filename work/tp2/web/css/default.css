@@ -1,0 +1,123 @@
+
+.clClear
+{
+	width:1px;
+	clear:both;
+}
+
+.clClear2 { height:2px; }
+.clClear5 { height:5px; }
+.clClear10 { height:10px; }
+
+.clSpace
+{
+	height:1px;
+	float:left;
+}
+
+.clSpace2 { width:2px; }
+.clSpace5 { width:5px; }
+.clSpace10 { width:10px; }
+
+@font-face
+{
+	font-family:'Glyphicons Halflings';
+	src:url('../fonts/glyphicons-halflings-regular.eot');
+	src:url('../fonts/glyphicons-halflings-regular.eot#iefix') format('embeded-opentype'),
+		url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+		url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+		url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+		url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.glyphicon
+{
+	position:relative;
+	top:1px;
+	display:inline-block;
+	font-family:'Glyphicons Halflings';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiasing;
+	-moz-osx-font-smoothing:greyscale;
+}
+
+
+
+
+.glyphicon-icn-1:before { content: "\002a"; }
+.glyphicon-icn-2:before { content: "\002b"; }
+
+.glyphicon-icn-3:before { content: "\2601"; }
+.glyphicon-icn-4:before { content: "\2709"; }
+.glyphicon-icn-5:before { content: "\270f"; }
+
+.glyphicon-icn-6:before { content: "\e005"; }
+.glyphicon-icn-7:before { content: "\e006"; }
+.glyphicon-icn-8:before { content: "\e007"; }
+.glyphicon-icn-9:before { content: "\e008"; }
+
+.glyphicon-icn-10:before { content: "\e013"; }
+.glyphicon-icn-11:before { content: "\e014"; }
+.glyphicon-icn-12:before { content: "\e015"; }
+.glyphicon-icn-13:before { content: "\e016"; }
+.glyphicon-icn-14:before { content: "\e017"; }
+.glyphicon-icn-15:before { content: "\e019"; }
+
+.glyphicon-icn-16:before { content: "\e020"; }
+.glyphicon-icn-17:before { content: "\e021"; }
+.glyphicon-icn-18:before { content: "\e026"; }
+.glyphicon-icn-19:before { content: "\e027"; }
+
+.glyphicon-icn-20:before { content: "\e030"; }
+.glyphicon-icn-21:before { content: "\e031"; }
+.glyphicon-icn-22:before { content: "\e032"; }
+.glyphicon-icn-23:before { content: "\e034"; }
+
+.glyphicon-icn-24:before { content: "\e041"; }
+.glyphicon-icn-25:before { content: "\e042"; }
+
+.glyphicon-icn-26:before { content: "\e079"; }
+.glyphicon-icn-27:before { content: "\e080"; }
+.glyphicon-icn-28:before { content: "\e081"; }
+.glyphicon-icn-29:before { content: "\e082"; }
+.glyphicon-icn-30:before { content: "\e083"; }
+.glyphicon-icn-31:before { content: "\e084"; }
+.glyphicon-icn-32:before { content: "\e085"; }
+.glyphicon-icn-33:before { content: "\e086"; }
+.glyphicon-icn-34:before { content: "\e088"; }
+.glyphicon-icn-35:before { content: "\e089"; }
+
+.glyphicon-icn-36:before { content: "\e101"; }
+.glyphicon-icn-37:before { content: "\e103"; }
+.glyphicon-icn-38:before { content: "\e104"; }
+.glyphicon-icn-39:before { content: "\e105"; }
+.glyphicon-icn-40:before { content: "\e106"; }
+.glyphicon-icn-41:before { content: "\e109"; }
+
+.glyphicon-icn-42:before { content: "\e111"; }
+.glyphicon-icn-43:before { content: "\e113"; }
+.glyphicon-icn-44:before { content: "\e114"; }
+
+
+.glyphicon-icn-45:before { content: "\e142"; }
+.glyphicon-icn-46:before { content: "\e146"; }
+
+.glyphicon-icn-47:before { content: "\e060"; }
+.glyphicon-icn-48:before { content: "\e166"; }
+.glyphicon-icn-49:before { content: "\e167"; }
+.glyphicon-icn-50:before { content: "\e168"; }
+
+.glyphicon-icn-51:before { content: "\e170"; }
+.glyphicon-icn-52:before { content: "\e171"; }
+.glyphicon-icn-53:before { content: "\e172"; }
+.glyphicon-icn-54:before { content: "\e173"; }
+.glyphicon-icn-55:before { content: "\e174"; }
+.glyphicon-icn-56:before { content: "\e175"; }
+.glyphicon-icn-57:before { content: "\e176"; }
+
+.glyphicon-icn-58:before { content: "\e197"; }
+.glyphicon-icn-59:before { content: "\e198"; }
+
+

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tables modifiables</title>
+	<link rel="stylesheet" type="text/css" href="web/css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="web/css/style.css"/>
+</head>
+<body>
+
+<form method="POST" action="[chemin vers la page de traitement]">
+<fieldset>
+	<legend>légende</legend>
+
+	<br/>
+		<meter min="0" max="10" value="1" low="3" high="8"></meter><br/>
+		<progress value="5" max="10"></progress>
+	<br/>
+	<input type="text" value="OK">
+	<br/>
+	<label for="">input de type range</label>
+	<input type="range" min="0" max="10" step="1"/><br/>
+
+	<label for="">étiquette1 (label)</label>
+	<input type=""><br/>
+	<br/>
+	<label for="">étiquette2 (label)</label>
+	<input type=""><br/>
+	<br/>
+	<textarea rows="5" cols="25">
+		zone de texte multilignes
+	</textarea>
+
+	<br/>
+	<label for="">input de type color :
+	<input type="color"/><br/>
+
+	<br/>
+	<label for="">input de type texte :
+	<input type="text" placeholder="entrez le texte ici" /><br/>	
+	<br/>
+	<label for="">input de type password</label>
+	<input type="password"/><br/>
+	<br/>
+	<label for="">input de type email</label>
+	<input type="email"/><br/>	
+	<br/>
+	<label for="">input de type phone</label>
+	<input type="phone"/><br/>
+	<br/>
+	<label for="">input de type date</label>
+	<input type="date"/><br/>
+	<br/>
+	<label for="">input de type time</label>
+	<input type="time"/><br/>
+
+
+
+	<br/>
+	<label for="">input de type checkbox</label>
+	<br/>	
+	<input type="checkbox" name="val0" value="valeur1">option1</input><br/>	
+	<input type="checkbox" name="val0" value="valeur2">option2</input><br/>
+	<input type="checkbox" name="val0" value="valeur3">option3</input><br/>
+	<br/>
+	<label for="">input de type radiobutton</label>
+	<br/>
+	<input type="radio" name="val1" value="valeur1">option1</input><br/>
+	<input type="radio" name="val1" value="valeur2">option2</input><br/>
+	<input type="radio" name="val1" value="valeur3">option3</input><br/>
+
+	
+	<br/>
+	<label for="">input de type file</label><br/>
+	<input type="file"/>
+	<br/>
+	<label for="">input de type number</label><br/>
+	<input type="number" value="12"/>
+	<br/>
+	<label for="">combobox</label><br/>
+	<select type="select">
+		<option value="1">option1</option>
+		<option value="2">option2</option>
+		<option value="3">option3</option>
+		<option value="4">option4</option>
+	</select>
+	<br/>
+
+
+</fieldset>
+
+
+<br/>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<button type="button">Button</button>
+</form>
+<br/>
+aaaa <em>emphase</em> bbb<br/>
+aaaa <cite>azerty</cite> ddd
+</body>
+</html>
