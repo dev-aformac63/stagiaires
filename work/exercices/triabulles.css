@@ -1,0 +1,27 @@
+
+table
+{
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+
+table tr th
+{
+	background-color: #f00;
+}
+
+table tr th:first-child
+{
+	background-color: #0f0;
+}
+
+table tr th:last-child
+{
+	background-color: #00f;
+}
+
+table tr td
+{
+	border: 1px solid #000;
+	background-color: #ccc;
+}
