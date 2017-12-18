@@ -1,0 +1,21 @@
+
+.clClear
+{
+	clear:both;
+	width:1px;
+}
+
+.clClear2 { height: 2px; }
+.clClear5 { height: 5px; }
+.clClear10 { height: 10px; }
+
+.clSpace
+{
+	float: left;
+	height: 1px;
+}
+
+.clSpace2 { width: 2px; }
+.clSpace5 { width: 5px; }
+.clSpace10 { width: 10px; }
+

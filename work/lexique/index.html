@@ -1,0 +1,465 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Site HTML sur le HTML</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<h1 id="top">HTML5</h1>
+<nav>
+	<ul>
+		<li><a href="#zone1">html</a></li>
+		<li><a href="#zone2">head</a></li>
+
+	</ul>
+</nav>
+
+
+<article>
+	<h3></h3>
+	<p>
+	Les balises HTML sont les éléments de base du codage HTML d’une page web. Invisibles pour l’internaute (sauf en activant l’affichage du code source), elles sont interprétées par le navigateur pour la composition de la page.
+
+	Elle permettent la mise en forme et la structuration des contenus et certaines sont spécifiquement prises en compte par les algorithmes des moteurs de recherche pour l’établissement du score de la page sur une requête et la restitution des résultats.
+	<a href="https://fr.wikipedia.org/wiki/HTML5" target="_blank">...</a>	
+	</p>
+</article>
+
+<article>
+	<h3></h3>
+	<p>Les balises s’écrivent entre un chevron ouvrant (signe inférieur <) et un chevron fermant (signe supérieur >),
+	Ex : <html>
+
+	Deux types de balises : 
+	Celles qui nécessitent une balise ouvrant et fermante, la balise fermante s’écrit comme une balise ouvrante mais
+	avec un slash (/) avant le nom de la balise.
+	Ex : <html> et </html>
+	Les balises auto-fermantes qui ne nécessitent pas de balise fermante ex : <img /> ou <br/>, elles s’écrivent
+	avec un slash (/) à la fin de la balise avant le chevron fermant (signe supérieur >)</p>
+</article>
+
+
+<article>
+	<h3>contenu minimal d'une page HTML</h3>
+	<pre>
+		<code>
+			&lt;!DOCTYPE html&gt;
+			&lt;html&gt;
+			&lt;head&gt;
+				&lt;meta charset=``UTF-8`` /&gt;
+				&lt;title&gt;titre de la page/onglet&lt;/title&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+
+			&lt;/body&gt;
+			&lt;/html&gt;
+	</code>
+	</pre>
+</article>
+
+<article>
+	<h3>&lt;!DOCTYPE html&gt;</h3>
+	<p>
+		Balise qui spécifie l’utilisation des recommandations du HTML5
+	</p>
+</article>
+
+<article id="zone1">
+	<h3>&lt;html&gt;&lt;/html&gt;</h3>
+	<p>
+		Balises qui délimitent et spécifient la nature du fichier en tant que fichier web HTML.
+	</p>
+</article>	
+
+<article id="zone2">
+	<h3>&lt;head&gt;&lt;/head&gt;</h3>
+	<p>
+		Balises qui encadrent les informations et paramètres de la page internet, chaque
+		paramètre/attribut est lui-même représenté par une balise.
+	</p>
+</article>
+
+<article>
+	<h3>&lt;body&gt;&lt;/body&gt;</h3>
+	<p>
+		Balises qui définissent le contenu de la page web, ce qui sera affiché par le navigateur.
+	</p>
+</article>
+
+<article>
+	<h3>&lt;meta /&gt;</h3>
+	<p>
+		<meta/>
+		Balise qui sert à définir des attributs/paramètres du document<br/>
+
+		<a href="https://www.w3schools.com/Tags/tag_meta.asp" target="_blank">https://www.w3schools.com/Tags/tag_meta.asp</a>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;title&gt;&lt;/title&gt;</h3>
+	<p>
+		Balise définissant le titre de la page ou de l’onglet.
+	</p>
+</article>
+
+<article>
+	<h3>&lt;style&gt;&lt;/style&gt;</h3>
+	<p>
+		Balise définissant et englogant les styles qui seront appliqués aux éléments HTML de la page.<br/>
+		<b>syntaxe :</b> &lt;style type="text/css"&gt;&lt;/style&gt;
+
+	</p>
+</article>
+
+<article>
+	<h3>&lt;script&gt;&lt;/script&gt;</h3>
+	<p>
+		Balise définissant et englogant les scripts qui seront exécutés sur la page ou alors qui servira à appeler une pages extérieure contenant les scripts.<br/>
+		<b>syntaxe :</b> 
+		<ul>
+			<li>&lt;script type="text/javascript"&gt;&lt;/script&gt;</li>
+			<li>&lt;script type="text/javascript"&gt; <b>href</b>="chemin_vers_le_fichier_de_script/fichier.js" &lt;/script&gt;</li>
+		</ul>
+		
+	</p>
+</article>
+
+section, article, header, footer, aside : on y viendra après
+
+<h2>Les balises de présentation de contenu</h2>
+
+<article>
+	<h3>&lt;p&gt;&lt;/p&gt;</h3>
+	<p>
+		Balise qui encadre un paragraphe.<br/>
+		Provoque un retour à la ligne pour la balise qui la suit.<br/>
+
+		<code>
+			&lt;p&gt;<br/>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet tincidunt sem eu tincidunt. Etiam molestie turpis tortor, id molestie mauris varius eget. Ut quis viverra enim.<br/>
+			&lt;/p&gt;
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;pre&gt;&lt;/pre&gt;</h3>
+	<p>
+		Balise qui encadre un paragraphe en appliquant un formatage. Le texte contenu dans la balise pre sera représenté en HTML tel qu'il est écrit dans le code source.<br/>
+		Provoque un retour à la ligne pour la balise qui la suit.<br/>
+
+		<code>
+			<pre>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Donec aliquet tincidunt sem eu tincidunt.
+			Etiam molestie turpis tortor, id molestie mauris varius eget.
+			Ut quis viverra enim.
+			</pre>
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;br/&gt;</h3>
+	<p>
+		Balise qui provoque un retour à la ligne.<br/>
+
+		<code>
+			première ligne&lt;br&gt; <br/>
+			deuxième ligne...
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;span&gt;&lt;/span&gt;</h3>
+	<p>
+		Balise de bloc servant à encadrer du texte. Sa taille s'adapte à son contenu.
+
+		Ne provoque pas de retour à la ligne.
+	</p>
+</article>
+
+<article>
+	<h3>&lt;div&gt;&lt;/div&gt;</h3>
+	<p>
+		Balise de bloc servant à encadrer du contenu, cette balise occupe toute la largeur<br/>
+		disponible sur la page et provoque un retour à la ligne pour l'élément qui le suit.
+	</p>
+</article>
+
+
+<h2>Les balises de stylage des textes</h2>
+
+<article>
+	<h3>&lt;b&gt;&lt;/b&gt;</h3>
+	<p>
+		Balises qui servent à mettre en gras (bold) le texte contenu entre elles.
+		<br/>
+		<code>
+			Du texte en &lt;b&gt; <b>gras</b> &lt;/b&gt;
+		</code> 
+	</p>
+</article>
+
+<article>
+	<h3>&lt;i&gt;&lt;/i&gt;</h3>
+	<p>
+		Balises qui servent à mettre en italique (italic) le texte contenu entre elles.
+		<br/>
+		<code>
+			Du texte en &lt;i&gt; <i>italique</i> &lt;/i&gt;
+		</code> 		
+	</p>
+</article>
+
+<article>
+	<h3>&lt;u&gt;&lt;/u&gt;</h3>
+	<p>
+		Balises qui servent à souligner le texte (underline) contenu entre elles.
+		<br/>
+		<code>
+			Du texte &lt;u&gt; <u>souligné</u> &lt;/u&gt;
+		</code> 
+	</p>
+</article>
+
+<article>
+	<h3>&lt;s&gt;&lt;/s&gt;</h3>
+	<p>
+		Balises qui servent à barrer le texte (strike) contenu entre elles.
+		<br/>
+		<code>
+			Du texte &lt;s&gt; <s>barré</s> &lt;/s&gt;
+		</code>		
+	</p>
+</article>
+
+<article>
+	<h3>&lt;strong&gt;&lt;/strong&gt;</h3>
+	<p>
+		Balises qui servent à forcir/rendre plus gras le texte (strong) contenu entre elles.
+		<br/>
+		<code>
+			Du texte &lt;strong&gt; <strong>forci</strong> &lt;/strong&gt;
+		</code>			
+	</p>
+</article>
+
+
+<article>
+	<h3>&lt;ul&gt;&lt;/ul&gt;</h3>
+	<p>
+		Balises qui définissent des listes à puces non-ordonnées.<br/>
+		Chaque élément de cette liste est défini entre les balises &lt;li&gt; et &lt;/li&gt;.<br/>
+		<code>
+			 <ul>liste non ordonnée
+				<li>Premier élément</li> 
+				<li>Deuxième élément</li>
+				<li>Troisième élément</li>
+			</ul>
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;ol&gt;&lt;/ol&gt;</h3>
+	<p>
+		Balises qui définissent des listes à puces ordonnées.<br/>
+		Chaque élément de cette liste est défini entre les balises &lt;li&gt; et &lt;/li&gt;.<br/>
+		<code>
+			 <ol>liste ordonnée
+				<li>Premier élément</li> 
+				<li>Deuxième élément</li>
+				<li>Troisième élément</li>
+			</ol>
+		</code>
+	</p>
+</article>
+
+<a href="#top">retourner en haut</a>
+<h2>Balises de contenus multimédia</h2>
+
+<article>
+	<h3>&lt;audio&gt;&lt;/audio&gt;</h3>
+	<p>
+		Balise servant à diffuser un contenu audio (musique).<br/>
+
+		<ul><b>paramètres de la balise</b>
+			<li><i>src</i> : chemin du fichier audio (mp3, wav, ogg/oga)</li>
+			<li><i>controls</i> : indique si on affiche ou non les boutons de contrôle (lecture/pause/stop)</li>
+			<li><i>autoplay</i> : indique de lire automatiquement le fichier audio au chargement de la page.</li>
+		</ul>
+		<code>
+			<audio src="spider_cochon.mp3" controls></audio>
+		</code>
+	</p>
+</article>
+
+<!--
+<article>
+	<h3>&lt;video&gt;&lt;/video&gt;</h3>
+	<p>
+		Balise servant à diffuser un contenu video (film,clip).<br/>
+
+		<ul><b>paramètres de la balise</b>
+			<li><i>src</i> : chemin du fichier vidéo (mp4, ogg/ogv)</li>
+			<li><i>controls</i> : indique si on affiche ou non les boutons de contrôle (lecture/pause/stop)</li>
+			<li><i>autoplay</i> : indique de lire automatiquement le fichier audio au chargement de la page.</li>
+		</ul>
+		<code>
+			<video src="big_buck_bunny_480p_stereo.ogg.oga" controls></video><br/>
+			<br/>
+			<iframe width="854" height="480" src="https://www.youtube.com/embed/pRxZ-uvyog0" frameborder="0" allowfullscreen></iframe>
+		</code>
+	</p>
+</article>
+-->
+
+<h2>Les tableaux</h2>
+<article>
+	<h3>&lt;table&gt;&lt;/table&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;thead&gt;&lt;/thead&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;tbody&gt;&lt;/tbody&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;tfooter&gt;&lt;/tfooter&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;tr&gt;&lt;/tr&gt;</h3>
+	<p>
+		Balise définissant ligne du tableau<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;th&gt;&lt;/th&gt;</h3>
+	<p>
+		Balise définissant une cellule d'entête du tableau (colonne d'une ligne)<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;td&gt;&lt;/td&gt;</h3>
+	<p>
+		Balise définissant une cellule de donnée du tableau (colonne d'une ligne)<br/>
+		<ul><b>paramètres :</b>
+			<li><i>colspan</i> : permet de fusionner la cellule portant cet attribut avec les cellules suivantes de la même ligne.
+			<li><i>rowspan</i> : permet de fusionner la cellule portant cet attribut avec les cellules de la même colonne mais des lignes suivantes.
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;caption&gt;&lt;/caption&gt;</h3>
+	<p>
+		Balise définissant le titre du tableau<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<h2>Les formulaires</h2>
+<ul>
+	<li>form</li>
+	<li>label</li>
+	<li>input</li>
+	<li>textarea</li>
+	<li>button</li>
+	<li>fieldset</li>
+	<li>legend</li>
+</ul>
+<article>
+	<h3>&lt;form&gt;&lt;/form&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;label&gt;&lt;/label&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;&gt;&lt;/&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+
+<article>
+	<h3>&lt;&gt;&lt;/&gt;</h3>
+	<p>
+		<br/>
+
+		<code>
+			
+		</code>
+	</p>
+</article>
+</body>
+</html>
