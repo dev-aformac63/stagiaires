@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test anim</title>
+	<style type="text/css">
+		#anim
+		{
+			width: 280px;
+			height: 385px;
+			background-image: url('web/img/spritesheetvolt_run.png');
+			border: 1px dotted green;
+		}
+
+		#sol
+		{
+			width: 100%;
+			height: 32px;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+<div id="anim"></div>
+<div id="sol"></div>
+
+<button id="btn"> >> </button>
+
+<script type="text/javascript">
+	var divImg=document.querySelector('#anim');
+	var btn=document.querySelector('#btn');
+	var dx=280;
+	var dy=385;
+	var tps=1000;
+	var compteur=0;
+
+	//btn.addEventListener('click',btn_onClick);
+	setInterval(btn_onClick,250);
+
+	function btn_onClick(ev)
+	{
+		var deplx=0;
+		var deply=0;
+		var i=0;
+		var j=0;
+
+		j=parseInt(compteur/5);
+		i=compteur%5;
+
+		//console.log('i : '+i+' -- j : '+j);
+
+
+		deplx=i*dx;
+		deply=j*dy;
+
+		deplx=-deplx;
+		deply=-deply;
+
+
+		divImg.style.backgroundPosition = deplx+'px '+deply+'px';
+		
+
+		if(compteur == 9)
+		{
+			compteur=0;
+		}
+		else
+		{
+			compteur++;
+		}
+		
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test maths</title>
+</head>
+<body>
+<div style="float:left;">
+	<canvas id="canvasid"></canvas>
+</div>
+<div style="float:left;margin-left:5px;">
+	<button id="btn" class="clGo">GO</button>
+</div>
+<div style="clear:both;"></div>
+
+<script type="text/javascript">
+var canvas;
+var context;
+var circle={};
+var N=12;
+var Q=2;
+var phi=0;
+var timerLoop;
+
+init();
+
+
+/**
+ *
+ *
+ */
+function init()
+{
+
+	Q=getUrlParams('Q');
+	Q=(Q != null)?Q:2;
+
+	N=getUrlParams('N');
+	N=(N != null)?N:2;
+
+	canvas=document.getElementById('canvasid');
+	context=canvas.getContext('2d');
+
+	canvas.width=800;
+	canvas.height=600;
+
+
+
+	circle.x0=parseInt(canvas.width/2);
+	circle.y0=parseInt(canvas.height/2);
+	circle.radius=280;
+
+
+
+	document.querySelector('#btn').addEventListener('click',btn_onClick,false);
+
+	display(N);
+
+}
+
+
+/**
+ *
+ *
+ */
+function btn_onClick(ev)
+{
+	ev=ev.target;
+
+	if(ev.classList.contains('clGo'))
+	{
+		ev.innerHTML='STOP';
+		ev.classList.remove('clGo');
+
+		//window.requestAnimationFrame(run);
+		timerLoop=window.setInterval(run,50);
+	}
+	else
+	{
+		ev.innerHTML='GO';
+		ev.classList.add('clGo');
+
+		window.clearInterval(timerLoop);
+	}
+	
+}
+
+/**
+ *
+ *
+ */
+function display(M)
+{
+	clearCanvas(canvas,context);
+
+	phi=2*Math.PI/M;
+	drawCircle(context,circle);
+	displayCirclePoints(circle);
+	displayConsoleText(context,'Table de '+Q+' modulo '+M);
+	displayCircleLines(M);
+}
+
+/**
+ *
+ *
+ */
+function run()
+{
+	N++;
+
+	display(N);
+}
+
+/**
+ *
+ *
+ */
+function displayConsoleText(ctx,txt)
+{
+	ctx.font='24px Arial';
+	ctx.fillText(txt,10,35);
+}
+
+/**
+ *
+ *
+ */
+function displayCirclePoints(circle)
+{
+	var angl=0;
+	var x=0;
+	var y=0;
+
+	for(var i=0;i<N;i++)
+	{
+		angl=calcPointPosition(i,phi);
+		x=circle.radius*Math.cos(angl)+circle.x0;
+		y=circle.radius*Math.sin(angl)+circle.y0;
+
+		drawPoint(context,x,y,5,'#000');
+
+	}
+}
+
+/**
+ *
+ *
+ */
+function displayCircleLines(M)
+{
+	var pos=0;
+	var pt1={};
+	var pt2={};
+	pt1.x=0;
+	pt1.y=0;
+	pt2.x=0;
+	pt2.y=0;
+
+
+	for(var i=1;i<M;i++)
+	{
+		pos=i;
+		angl=calcPointPosition(pos,phi);
+		pt1.x=circle.radius*Math.cos(angl)+circle.x0;
+		pt1.y=circle.radius*Math.sin(angl)+circle.y0;
+		drawPoint(context,pt1.x,pt1.y,5,'#000');
+		
+		pos=Q*i;
+		angl=calcPointPosition(pos,phi);
+		pt2.x=circle.radius*Math.cos(angl)+circle.x0;
+		pt2.y=circle.radius*Math.sin(angl)+circle.y0;
+		drawPoint(context,pt2.x,pt2.y,5,'#000');
+
+		drawLine(context,pt1,pt2);
+	}
+}
+
+/**
+ *
+ *
+ */
+function calcPointPosition(pos,phi)
+{
+	return -Math.PI/2+pos*phi;
+}
+
+/**
+ *
+ *
+ */
+function drawLine(ctx,pt1,pt2)
+{
+	ctx.lineWidth=1;
+	ctx.strokeStyle='#000';
+	ctx.beginPath();
+	ctx.moveTo(pt1.x,pt1.y);
+	ctx.lineTo(pt2.x,pt2.y);
+	ctx.stroke();
+}
+
+/**
+ *
+ *
+ */
+function clearCanvas(cvs,ctx)
+{
+	ctx.clearRect(0,0,cvs.width,cvs.height);
+	ctx.fillStyle='#ace';
+	ctx.fillRect(0,0,cvs.width,cvs.height);
+}
+
+/**
+ *
+ *
+ */
+function drawPoint(ctx,x,y,sz,col)
+{
+	sz=1;
+	//ctx.lineWidth=1;
+	ctx.fillStyle=col;
+	//ctx.strokeStyle='#000';
+
+	ctx.beginPath();
+	ctx.arc(x,y,sz,0,2*Math.PI,false);
+	ctx.fill();
+	//ctx.stroke();
+
+}
+
+/**
+ *
+ *
+ */
+function drawCircle(ctx,c)
+{
+	ctx.lineWidth=2;
+	ctx.fillStyle='#fff';
+	ctx.strokeStyle='#000';
+
+	ctx.beginPath();
+	ctx.arc(c.x0,c.y0,c.radius,0,2*Math.PI,false);
+	ctx.fill();
+	ctx.stroke();
+
+	//ctx.closePath();
+}
+
+/**
+ *
+ *
+ */
+function getUrlParams(param)
+{
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param )
+	{
+		return vars[param] ? vars[param] : null;	
+	}
+
+	return vars;
+}
+
+</script>
+</body>
+</html>

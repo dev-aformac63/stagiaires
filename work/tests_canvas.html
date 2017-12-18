@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Test cursor</title>
+	<style type="text/css">
+		canvas
+		{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600"></canvas>
+<button id="btnClear">Effacer</button>
+<button id="btnMove">Déplacer</button>
+
+<script type="text/javascript">
+/*	
+	var fps=10;
+	var now;
+	var then=Date.now();
+	var interval=1000/fps;
+	var deltaTps;
+*/
+	var position={'x':400,'y':300};
+	var vector={'x':0,'y':0};
+
+
+	var canvas=document.querySelector('#canvas');
+	var context=canvas.getContext('2d');
+	var btnClear=document.querySelector('#btnClear');
+
+	var numimg=0;
+	var rotation=0;
+
+	window.onload=function()
+	{
+		//strokeRect(x,y,width,height) : rectangle vide (contour)
+/*		
+		context.strokeStyle='#f00';
+		context.lineWidth=5;
+		context.strokeRect(50,50,50,50);
+*/
+		//fillRect(x,y,width,height) : rectangle plein
+/*		
+		context.fillStyle='teal';
+		context.strokeStyle='#00f';
+		context.fillRect(150,150,200,250);
+		context.strokeRect(150,150,200,250);
+*/
+
+		//ligne
+/*		
+		context.beginPath();
+		context.moveTo(400,200);
+		context.lineTo(470,300);
+		context.lineTo(400,300);
+		//context.lineTo(400,200);
+		context.closePath();
+		context.stroke();
+		//context.closePath();
+*/
+		//cercles arc(x,y,radius,angle départ, angle de fin,sens horaire)
+		drawCircle(position.x,position.y,50,'#f00');
+
+
+		//drawCross(400,300,10,'#f00');
+
+		//text 'text',x,y
+/*		
+		context.font='30px serif';
+		context.lineWidth=1;
+		context.fillText('OK c\' est du texte',500,50);
+		context.strokeText('OK c\' est du texte',500,100);
+
+		var d=context.measureText('cercle').width/2;console.log(d);
+		context.fillStyle='#fff';
+		context.textBaseline='middle';
+		context.fillText('cercle',400-d,300);
+*/
+
+		//drawPicture(100,50,'nain.png');
+		//drawPicture2(550,50,'sheetmario1.png');
+		//drawPicture3(50,200,'spritesheetvolt_run.png');
+
+		canvas.addEventListener('click',canvas_onClick);
+		canvas.addEventListener('mousemove',canvas_onMouseMove);
+		canvas.addEventListener('contextmenu',canvas_onContextMenu);
+		btnClear.addEventListener('click',btnClear_onClick);
+		btnMove.addEventListener('click',btnMove_onClick);
+
+		window.requestAnimationFrame(mainLoop);		
+	}
+
+	/**
+	 *
+	 */	 
+	function mainLoop()
+	{
+		//vider l'affichage
+		clearCanvas();
+
+		//modifier les positions
+		position.x+=vector.x;
+		position.y+=vector.y;
+
+		//redessiner les éléments
+		drawCircle(position.x,position.y,50);
+
+/*
+		le carré rouge reste fixe, le carré bleu tourne sur lui-même
+
+		if(rotation == 360)
+		{
+			rotation=0;
+		} else rotation+=0.1;
+
+		context.fillStyle='#f00';
+		context.strokeStyle='#000';
+
+		context.fillRect(100,100,50,50);
+		context.fillStyle='';
+		context.strokeStyle='';
+
+		context.save();
+
+		//le canvas actuel est sauvegardé
+		//à partir de ce point, les dessins suivant (carré bleu)
+		//seront affectés par les transformations du canvas
+
+		context.translate(position.x-25,position.y-25);//déplacer le coin (0,0) du canvas sur la position du carré bleu
+
+		context.rotate(rotation);//appliquer la rotation du canvas
+		context.translate(-(position.x+25),-(position.y+25));//déplacer le canvas vers sa position d'origine
+		context.fillStyle='#00f';
+		context.strokeStyle='#000';
+
+		context.fillRect(position.x,position.y,50,50);
+		context.fillStyle='';
+		context.strokeStyle='';
+		context.restore();//restaurer la version sauvegardée en la synchronisant avec les dessins modifiés
+*/
+		drawCross(400,300,10,'#000');
+
+		window.requestAnimationFrame(mainLoop);
+		
+/*		
+		window.requestAnimationFrame(mainLoop);
+
+		now=Date.now();
+		deltaTps=now-then;
+
+		if(deltaTps > interval)
+		{
+			clearCanvas();
+
+			//update elements
+			if(numimg < 10)
+			{
+				numimg++;
+			} else numimg=0;
+
+			drawScene();
+
+			then=now-(deltaTps%interval);
+		}
+*/
+		
+	}
+
+
+	/**
+	 *
+	 */
+	function drawScene()
+	{
+		drawPicture3(50,200,'spritesheetvolt_run.png');
+	}
+
+	/**
+	 *
+	 */
+	function clearCanvas()
+	{
+		context.clearRect(0,0,canvas.width,canvas.height);
+	}
+
+	/**
+	 *
+	 */
+	function btnMove_onClick(ev)
+	{
+		btnClear_onClick();
+		
+		drawCircle(500,100,50);
+	}
+
+	/**
+	 *
+	 */
+	function btnClear_onClick(ev)
+	{
+		clearCanvas();
+	}
+
+	/**
+	 *
+	 */
+	function canvas_onMouseMove(ev)
+	{
+/*		
+		context.fillStyle='#fff';
+		context.fillRect(0,0,300,60);
+*/
+
+/*
+		context.font='14px serif';
+		context.fillStyle='#000';
+		context.fillText('position curseur x : '+ev.clientX+' -- y : '+ev.clientY,20,20);
+*/
+
+		var dx=ev.clientX-position.x;
+		var dy=ev.clientY-position.y;
+		var d=Math.sqrt(dx*dx+dy*dy);
+		vector.x=dx/d;
+		vector.y=dy/d;
+
+
+	}
+
+	/**
+	 *
+	 */
+	function canvas_onContextMenu(ev)
+	{
+		ev.preventDefault();
+		drawCircle(ev.clientX,ev.clientY,20,'#000');
+	}
+
+	/**
+	 *
+	 */
+	function canvas_onClick(ev)
+	{
+		drawCross(ev.clientX,ev.clientY,10,'#000');
+		//drawCircle(ev.clientX,ev.clientY,20,'#000');
+	}
+
+	/**
+	 *
+	 */
+	function drawCircle(x,y,r,col)
+	{
+		context.beginPath();
+		//context.fillStyle=col;
+		context.strokeStyle=col;
+		context.lineWidth=1;
+		context.arc(x,y,r,0,2*Math.PI);
+		//context.fill();
+		context.stroke();
+		context.closePath();
+	}
+
+
+	/**
+	 *
+	 */
+	function drawVector(xa,ya,xb,yb,col)
+	{
+		context.beginPath();
+		context.strokeStyle=col;
+		context.lineWidth=1;		
+		context.moveTo(xa,ya);
+		context.lineTo(xb,yb);
+		context.closePath();
+		context.stroke();
+		context.strokeStyle='';
+	}
+
+	/**
+	 *
+	 */
+	function drawLine(x,y,l,col)
+	{
+		context.beginPath();
+		context.strokeStyle=col;
+		context.lineWidth=1;		
+		context.moveTo(x-l,y);
+		context.lineTo(x+l,y);
+		context.closePath();
+		context.stroke();
+	}
+
+	/**
+	 *
+	 */
+	function drawCross(x,y,l,col)
+	{
+		context.strokeStyle=col;
+		context.lineWidth=1;
+		context.beginPath();
+		context.moveTo(x-l,y);
+		context.lineTo(x+l,y);
+		context.closePath();
+		context.stroke();
+
+		context.beginPath();
+		context.moveTo(x,y-l);
+		context.lineTo(x,y+l);
+		context.closePath();
+		context.stroke();
+
+		context.strokeStyle='';
+	}
+
+	/**
+	 *
+	 */
+	function drawPicture(x,y,src)
+	{
+		var img=new Image();
+		img.onload=function()
+		{
+			context.drawImage(img,x,y,143,200);
+		};
+		img.src=src;
+	}
+
+	/**
+	 *
+	 */
+	function drawPicture2(x,y,src)
+	{
+		var img=new Image();
+		img.onload=function()
+		{
+			context.drawImage(img,96,143,96,143,x,y,192,286);
+		};
+		img.src=src;
+	}
+
+	/**
+	 *
+	 */
+	function drawPicture3(x,y,src)
+	{
+
+		var img=new Image();
+		img.onload=function()
+		{
+			var dx=280;//parseInt(img.width\5);
+			var dy=385;//parseInt(img.height\2);
+
+			var py=parseInt(numimg/5);
+			var px=numimg%5;
+
+			context.drawImage(img,dx*px,dy*py,dx,dy,x,y,dx,dy);
+		};
+		img.src=src;
+	}		
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
