@@ -1,0 +1,84 @@
+
+.clClear
+{
+	clear:both;
+	width:1px;
+}
+
+.clClear2 { height:2px; }
+.clClear5 { height:5px; }
+
+.clSpace
+{
+	height:1px;
+	float:left;
+}
+
+.clSpace2 { width:2px; }
+.clSpace5 { width:5px; }
+.clSpace10 { width:10px; }
+
+form
+{
+
+}
+
+.clFormRow
+{
+	margin-bottom:4px;
+}
+
+.clField
+{
+	border:1px dotted #000;
+	width:120px;
+	float:left;
+}
+
+.clFormRow button
+{
+	width:120px;
+}
+
+#imgPreview
+{
+	width:256;
+	height:256px;
+}
+
+/*
+a.button
+{
+    -webkit-appearance: button;
+    -moz-appearance: button;	
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+	cursor:pointer;
+}
+*/
+
+input
+{
+	font-style: italic;
+}
+
+.clTest
+{
+	font-weight: bold;
+}
+
+#txtDesignation
+{
+	color:red;
+}
+
+.clImportant
+{
+	border:1px solid #f00;
+}
+
+#txtDesignation:focus
+{
+	background-color: green;
+}

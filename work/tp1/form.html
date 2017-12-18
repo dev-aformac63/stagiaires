@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Fiche saisie nouvel article</title>
+	<link rel="stylesheet" type="text/css" href="web/css/form.css"/>
+</head>
+<body>
+<h1>Formulaire de saisie d'un nouvel article</h1>
+
+<form method="POST" action="#">
+
+	<div class="clFormRow">
+		<label for="txtCode"><div class="clField">Code article :</div></label>
+		<input id="txtCode" name="txtCode" type="text" class="clTest clImportant"/>
+	</div>
+	<div class="clClear clClear5"></div>
+
+	<div class="clFormRow">
+		<label for="txtDesignation"><div class="clField">Designation :</div></label>
+		<input id="txtDesignation" name="txtDesignation" type="text" size="50" maxlength="50" />
+	</div>
+	<div class="clClear clClear5"></div>
+
+	<div class="clFormRow">
+		<label for="txtDescription"><div class="clField">Description :</div></label>
+		<textarea id="txtDescription" name="txtDescription" cols="40" rows="5"></textarea>
+	</div>
+	<div class="clClear clClear5"></div>	
+	
+	<div class="clFormRow">
+		<label for="txtPrix"><div class="clField">Prix :</div></label>
+		<input id="txtPrix" name="txtPrix" type="text" size="10" maxlength="8" value="0,00" class="clTest"/>&euro;
+	</div>
+	<div class="clClear clClear5"></div>	
+
+	<div class="clFormRow">
+		<label for="txtQty"><div class="clField">Quantité :</div></label>
+		<input id="txtQty" name="txtQty" type="text" size="4" maxlength="3" value="0" />
+	</div>
+	<div class="clClear clClear5"></div>
+
+<!--
+	<div class="clFormRow">
+		<input id="" name="" type="file" accept="image/*"/><br/>
+		<img id="imgPreview" name="imgPreview" src=""/>
+	</div>
+	<div class="clClear clClear5"></div>
+-->	
+	<div id="div1">
+		<input type="checkbox" id="chk1" name="chk1" value="Accepter les CGU">Accepter les CGU</input>
+	</div>
+	<div class="clClear clClear5"></div>
+	<div class="clClear clClear5"></div>
+
+	<div class="clFormRow">
+		<button type="submit" id="btnOk" name="btnOk">Ok</button>
+		<!--<a class="button" id="btnCancel" name="btnCancel" href="articles.html">Annuler</a>-->
+		<button type="button" id="btnCancel" name="btnCancel">Annuler</button>
+	</div>
+
+	<script type="text/javascript" src="web/js/form1a.js"></script>
+</form>
+</body>
+</html>

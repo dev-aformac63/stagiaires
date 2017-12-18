@@ -1,0 +1,62 @@
+
+.clRow
+{
+	clear:both;
+}
+
+.clCol
+{
+	width:200px;
+	height:200px;
+	border:1px dashed #ccc;
+	text-align:center;
+	float:left;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+.clCol:hover
+{
+	border:1px solid #ff0;
+}
+
+.clImg
+{
+	width:128px;
+	height:128px;
+	border:1px solid #000;
+}
+
+.clImg:hover
+{
+	border:1px solid #ff0;
+}
+
+.clTitre
+{
+	font-weight:bold;
+	font-size:22px;
+}
+
+.clPrix
+{
+	text-align:right;
+	font-weight:bold;
+}
+
+#btnAdd
+{
+	float:right;
+	/*font-weight:normal;*/
+	/*font-size:18px;*/
+	width:100px;
+	padding:5px;
+}
+
+#imgAdd
+{
+	width:24px;
+	height:24px;
+	margin-right:4px;
+	vertical-align:middle;
+}
