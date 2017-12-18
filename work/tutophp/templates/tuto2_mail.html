@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container" style="width:60%;">
+	<div style="text-align:center;">
+		<img src="web/img/aformac2.png" style="width:128px;height:128px;" />
+	</div>
+
+  <form method="POST" action="tuto2_sendmail.php">
+
+
+    <div class="form-group">
+			<label for="txtSubject">Adresse mail :</label>
+			<input type="email" class="form-control" id="txtMail" name="txtMail" value="">
+		</div>
+    		<div class="form-group">
+			<label for="txtSubject">Sujet :</label>
+			<input type="text" class="form-control" id="txtSubject" name="txtSubject" value="">
+		</div>
+
+		<div class="form-group">
+			<label for="txtContent">Contenu :</label>
+			<textarea class="form-control" id="txtContent" name="txtContent" cols="25" rows="10"></textarea>
+		</div>
+
+
+		<button type="submit" class="btn btn-primary" id="submit" name="submit">Envoyer</button>
+		<button type="submit" class="btn btn-primary" id="cancel" name="cancel">Annuler</button>
+	</form>
+</div>
+</body>
+</html>

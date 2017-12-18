@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+  <title>titre {{ titre }}</title>
+	<link rel="stylesheet" type="text/css" href="web/css/" />
+	<style type="text/css">
+
+  table tr th,td
+  {
+    border:1px solid teal;
+  }
+	</style>
+</head>
+<body>
+
+<table>
+<thead>
+  <tr>
+    <th>#</th>
+    <th>titre</th>
+    <th>texte</th>
+    <th>image</th>
+  </tr>
+</thead>
+<tbody>
+  {% for element in liste %}
+  <tr>
+    <td>{{ element.id }}</td>
+    <td>{{ element.titre }}</td>
+    <td>{{ element.texte }}</td>
+    <td>
+    {% if element.visuel != null %}
+    <img src="assets/uploads/{{ element.visuel }}" style="width:64px;height:64px;" />
+    {% else %}
+    <img src="assets/uploads/noimg.png" style="width:64px;height:64px;" />
+    {% endif %}
+    </td>
+  </tr>
+  {% else %}
+  <tr>
+    <td colspan="4">pas d'article enregistré</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+
+
+
+<script type="text/javascript" src="web/js/jquery.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css" />
+	<style type="text/css">
+		table
+		{
+			width: 100%;
+		}
+
+		table tr th,td
+		{
+			border: 1px solid #ace;
+			/*width: 25%;*/
+		}
+
+		btnAction
+		{
+			float:left;
+			margin-left: 2px;
+			margin-right: 2px;
+		}
+
+		.miniature
+		{
+			width:48px;
+			height: 48px;
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container" style="width:60%;">
+	<div style="text-align:center;">
+		<img src="web/img/aformac2.png" style="width:128px;height:128px;" />
+	</div>
+	<a href="tuto1_form.php"><button id="btnAjouter" class="btn btn-primary">Ajouter</button></a>
+	<table id="">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Section</th>
+				<th></th>
+				<th>Actualité</th>
+				<th>Date mise à jour</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for elem in elems %}
+						<tr>
+							<td>
+								{{ elem.id }} | {{ loop.index }} | {{ loop.index0 }}
+							</td>
+							<td>
+								{{ elem.section }}
+							</td>
+							<td>
+									<img class="miniature" src="assets/uploads/{{ elem.visuel }}" />
+							</td>
+
+							<td>
+								<h3>{{ elem.titre }}</h3>
+								{{ elem.texte }}
+							</td>
+							<td>
+								{{ elem.date_crea }}
+							</td>
+							<td>
+								<a href="tuto1_form.php?id={{ elem.id }}"><button id="" class="btn btn-primary btnAction">
+									<i class="glyphicon glyphicon-pencil"></i>
+								</button></a>
+								<a href="tuto1_delete.php?id={{ elem.id }}"><button id="" class="btn btn-primary btnAction">
+									<i class="glyphicon glyphicon-remove"></i>
+								</button></a>
+							</td>
+						</tr>
+			{% else %}
+					<tr>
+						<td colspan="6"><i>aucune actualité disponible</i></td>
+					</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	</div>
+
+</div>
+
+<script type="text/javascript" src="web/js/jquery.min.js"></script>
+<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
+</body>
+</html>
