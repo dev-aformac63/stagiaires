@@ -1,0 +1,8 @@
+
+table, th, td, tr{
+  border: 1px solid red;
+  background-color: orange;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}

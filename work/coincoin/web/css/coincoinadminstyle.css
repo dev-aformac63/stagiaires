@@ -1,0 +1,78 @@
+
+table, th, td, tr{
+  border: 1px solid red;
+  background-color: orange;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+  .clSlot
+  {
+
+  }
+
+  .clSlot input
+  {
+      display: none;
+  }
+
+  .clSlotInner
+  {
+    width:128px;
+    height: 128px;
+    margin:0 auto;
+    border:4px dashed red;
+    text-align: center;
+    cursor:pointer;
+  }
+
+  .clSlotInner:hover
+  {
+      border-color:yellow;
+  }
+
+  .clSlotInner::before
+  {
+    content:"\e046";
+    font-family: "Glyphicons Halflings";
+    font-size: 5em;
+    color:red;
+  }
+
+  .clSlotInner:hover::before
+  {
+    color:yellow;
+  }
+
+  .visuel
+  {
+    width:50%;
+  }
+
+  .visuelSlot
+  {
+    text-align: center;
+  }
+
+  #img-upload-slot
+  {
+      text-align: center;
+  }
+
+  #img-upload
+  {
+    width:50%;
+    border:1px solid #000;
+  }
+
+
+.entete{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group
+{
+  border: 1px solid red;
+}

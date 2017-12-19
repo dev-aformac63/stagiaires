@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Le bon coincoin</title>
+  <link rel="icon" type="image/png" href="favicon.jpg" />
+  <link rel="stylesheet" type="text/css" href="web/css/coincoinadminstyle.css" />
+
+
+</head>
+<body>
+<div class="entete" style="width:60%;">
+	<div style="text-align:center;">
+		<img src="assets/upload/enteteadmin.jpg" style="width:100%;height:250px;" />
+	</div>
+
+	<form method="POST" action="editScript.php" enctype="multipart/form-data">
+		<input type="hidden" id="id" name="id" value="{{ element.id }}"/>
+
+		<div class="form-group">
+			<label for="txtTitre">Titre :</label>
+			<input type="text" class="form-control" id="txtTitre" name="txtTitre" value="{{ element.titre }}">
+		</div>
+
+		<div class="form-group">
+			<label for="txtDescription">Description:</label>
+			<textarea class="form-control" id="txtDescription" name="txtDescription" cols="25" rows="10">{{ element.description }}</textarea>
+		</div>
+
+		<div class="form-group">
+			<div id="img-upload-slot">
+				<img id="img-upload"/>
+			</div>
+
+			<div class="clSlot" id="btn1">
+				<div class="clSlotInner">
+				</div>
+				<input type="file" id="txtFile" name="txtFile" />
+			</div>
+		</div>
+
+				<div class="form-group">
+					<div class="visuelSlot">
+						<img class="image" name="image" src="assets/upload/{{ element.image }}" style="width:100%;"/>
+					</div>
+				</div>
+
+		<button type="submit" class="btn btn-primary" id="submit" name="submit">Envoyer</button>
+		<button type="submit" class="btn btn-primary" id="cancel" name="cancel">Annuler</button>
+
+	</form>
+</div>
+
+<script type="text/javascript" src="web/js/jquery.min.js"></script>
+<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#btn1').on('click',function(ev)
+	{
+		$('#txtFile').click();
+	});
+
+	$('#txtFile').on('click',function(ev)
+	{
+		ev.stopPropagation();
+	});
+
+	$('#txtFile').on('change',function(ev)
+	{
+		readURL(this);
+	});
+
+	function readURL(input)
+	{
+	    if (input.files && input.files[0])
+	    {
+	        var reader = new FileReader();
+
+	        reader.onload = function (e)
+	        {
+	            $('#img-upload').attr('src', e.target.result);
+	        }
+
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+});
+
+</script>
+</body>
+</html>

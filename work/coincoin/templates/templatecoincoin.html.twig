@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Le bon coincoin</title>
+  <link rel="icon" type="image/png" href="favicon.jpg" />
+  <link rel="stylesheet" type="text/css" href="web/css/coincoinstyle.css" />
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>titre</th>
+        <th>image</th>
+        <th>description</th>
+        <th>Coincoin</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for element in liste %}
+      <td>{{ element.titre }}</td>
+      <td>
+        {% if element.image != null %}
+        <img src="assets/upload/{{ element.image }}" style="width:128px;height:128px;" />
+        {% else %}
+        <img src="assets/upload/noimg.png" style="width:128px;height:128px;" />
+        {% endif %}
+      </td>
+      <td>{{ element.description }}</td>
+      <td>
+        la je mettrai le bouton like
+      </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="4">Oh zut.... Plus de Coincoin...</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script type="text/javascript" src="web/js/jquery.min.js"></script>
+  <script type="text/javascript" src="web/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
